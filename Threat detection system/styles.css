@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 70px; /* Prevents navbar from covering content */
+}
+
+/* Navbar */
+.navbar {
+    background: #007bff;
+    padding: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(7, 10, 14, 0.597) !important;
+    font-weight: bold;
+}
+
+.navbar-img {
+    width: 60px; /* Reduced image size */
+    height: 50px;
+}
+
+/* Navbar Company Name & Tagline */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #06c1f5;
+    margin-left: 10px;
+}
+
+#home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centering Content */
+.container {
+    max-width: 1100px;
+}
+
+/* Fixing section size */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+
+/* Image Styling */
+.col-md-6 img {
+    height: 300px; /* Reduced height */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Login Form */
+.login-form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+.head-1 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Styling the Services Section */
+#services {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Styling for the Services heading */
+#services h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#services p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Container to hold the service boxes */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+/* Service Box Styling */
+.service-box {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;  /* Each box takes up 45% of the width */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Title of Each Service Box */
+.service-box h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Content of Each Service Box */
+.service-box p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Hover effect on the service boxes */
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* For Smaller Screens (Mobile) */
+@media screen and (max-width: 768px) {
+    .service-box {
+        width: 100%;  /* Full width on mobile */
+    }
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headings */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2980b9;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Text Styling */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Info Boxes */
+.info-box {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #3498db;
+    border-radius: 5px;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: url('checkmark.png') no-repeat left center;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Team Section */
+.team-section {
+    text-align: center;
+    background: #dff9fb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Why Choose Us */
+.why-choose {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #e8f6f3;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.contact-section a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Closing Message */
+.closing-message {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 5px;
+}

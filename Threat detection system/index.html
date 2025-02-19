@@ -1,0 +1,303 @@
+Index html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Monitoring System</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="https://media.istockphoto.com/photos/medical-icon-caduceus-rod-of-hermes-picture-id1130947395?k=20&m=1130947395&s=612x612&w=0&h=TnnOrvEGRZ9-ysM2pLzTJ8hgppvxzXeDQiIGpIEWkBU=" 
+                 class="navbar-img" alt="Medical Logo" />
+            <div>
+                <span class="company-name">Good Samaritan Medical Center</span>
+                
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#articles">Articles</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="container section">
+        <div class="row">
+            <!-- Left Side: Image -->
+            <div class="col-md-6">
+                <img src="https://img.freepik.com/free-photo/happy-doctor-holding-clipboard-with-patients_1098-2176.jpg?semt=ais_hybrid" 
+                     alt="Doctor Image" class="img-fluid">
+            </div>
+
+            <!-- Right Side: Login Form -->
+            <div class="col-md-6">
+                <div class="login-form">
+                    <h3 class="head-1">Login</h3>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+            </div>
+            
+            <script>
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form from reloading the page
+            
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+            
+                fetch('http://127.0.0.1:5000/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                })
+                .then(response => response.json())
+                .then(data => alert(data.message)) // Show success or error message
+                .catch(error => console.error('Error:', error));
+            });
+            </script>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container section">
+        <h2>Our Services</h2>
+        <p>We offer a range of medical services to meet your healthcare needs.</p>
+        
+        <div class="services-container">
+            <!-- First Service Box -->
+            <div class="service-box">
+                <h3>General Consultations</h3>
+                <p>Our general practitioners are here to assist with routine check-ups, health concerns, and basic medical advice. Whether it’s a cold, chronic condition, or preventative care, we are here for you.</p>
+            </div>
+    
+            <!-- Second Service Box -->
+            <div class="service-box">
+                <h3>Emergency Care</h3>
+                <p>We provide 24/7 emergency services for sudden injuries, accidents, and urgent health concerns. Our medical team is trained to offer immediate care and stabilize patients for further treatment.</p>
+            </div>
+    
+            <!-- Third Service Box -->
+            <div class="service-box">
+                <h3>Preventive Health & Wellness</h3>
+                <p>We focus on keeping you healthy, not just treating illnesses. Our preventive services include regular health screenings, vaccinations, and health assessments to catch potential issues before they become serious.</p>
+            </div>
+    
+            <!-- Fourth Service Box -->
+            <div class="service-box">
+                <h3>Diagnostic Services</h3>
+                <p>Our clinic is equipped with modern diagnostic tools to help identify and monitor your health condition. This includes blood tests, imaging (X-rays, ultrasounds).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="container section">
+        <h2>Health & Wellness Articles</h2>
+        <p>Read about important health topics and tips for a healthier lifestyle.</p>
+    
+        <div class="articles-container">
+            <!-- Article 1 -->
+            <div class="article-box">
+                <h3>The Importance of Regular Health Check-ups</h3>
+                <p>
+                    Regular health check-ups are crucial for maintaining good health and detecting potential issues before they become serious. These visits offer an opportunity to monitor your overall well-being and catch health problems early when they are most treatable. Routine screenings, such as blood pressure checks, cholesterol tests, and cancer screenings, help identify risk factors and prevent long-term complications.
+                    <br><br>
+                    For adults, check-ups should include assessments for cardiovascular health, diabetes, and obesity, while pediatric visits may include immunizations and developmental milestones. Preventive care is an essential part of a healthy lifestyle—ensuring that you stay informed about your health status, take necessary precautions, and make any lifestyle adjustments early on.
+                    <br><br>
+                    Additionally, routine visits foster a relationship with your healthcare provider, allowing you to discuss concerns, ask questions, and receive personalized health advice. It’s always better to prevent than to treat, and regular check-ups are your first line of defense in staying healthy for life.
+                </p>
+            </div>
+    
+            <!-- Article 2 -->
+            <div class="article-box">
+                <h3>Managing Stress: Tips for Mental Well-being</h3>
+                <p>
+                    Stress is an inevitable part of life, but chronic stress can have significant negative effects on both mental and physical health. Left unmanaged, it can contribute to conditions such as anxiety, depression, and even heart disease. Understanding how to manage stress is key to maintaining mental well-being.
+                    <br><br>
+                    One effective strategy is mindfulness—taking time each day to practice deep breathing, meditation, or yoga. These activities can help calm the nervous system, reduce anxiety, and improve emotional resilience. Additionally, physical activity plays a significant role in stress management. Exercise releases endorphins, the body’s natural mood boosters, and helps to reduce tension in the body.
+                    <br><br>
+                    Healthy lifestyle habits also promote stress resilience. Regular sleep, proper nutrition, and limiting alcohol or caffeine intake are all essential for stress management. Moreover, maintaining social connections and seeking professional help when needed, such as therapy or counseling, can offer vital support during challenging times.
+                    <br><br>
+                    By incorporating these strategies, you can create a balanced approach to life and reduce the negative effects of stress, leading to improved mental health and a better quality of life.
+                </p>
+            </div>
+    
+            <!-- Article 3 -->
+            <div class="article-box">
+                <h3>Understanding the Benefits of Vaccination</h3>
+                <p>
+                    Vaccination is one of the most effective ways to protect individuals and communities from preventable diseases. Vaccines work by stimulating the immune system to recognize and fight specific viruses or bacteria, offering protection against diseases like measles, polio, and the flu.
+                    <br><br>
+                    In addition to individual protection, vaccines help create herd immunity. When a large percentage of the population is vaccinated, the spread of disease is slowed, reducing the likelihood of outbreaks. This is particularly important for those who cannot receive vaccines, such as infants or individuals with compromised immune systems.
+                    <br><br>
+                    Vaccines not only save lives but also prevent the economic burden of treating preventable diseases. They are a key tool in the global effort to eradicate infectious diseases, contributing to improved public health worldwide.
+                    <br><br>
+                    It’s important to stay updated on recommended vaccinations and follow your healthcare provider’s advice, as immunization schedules may vary based on age and health conditions. Whether for children, adults, or travel purposes, vaccines play a crucial role in safeguarding your health and the health of your community.
+                </p>
+            </div>
+    
+            <!-- Article 4 -->
+            <div class="article-box">
+                <h3>How to Stay Healthy During Seasonal Changes</h3>
+                <p>
+                    As the seasons change, our bodies face different environmental factors that can impact our health. From cold winters to hot summers, it’s essential to adapt our habits to maintain good health throughout the year.
+                    <br><br>
+                    In winter, the cold air and indoor heating can dry out our skin and respiratory system. To stay healthy, ensure proper hydration, use moisturizers, and wear appropriate clothing to prevent colds and flu. Boosting your immune system with vitamin C-rich foods and flu vaccines can help prevent common seasonal illnesses.
+                    <br><br>
+                    During warmer months, the risk of dehydration increases, so it’s important to drink plenty of water and protect your skin from harmful UV rays by wearing sunscreen. Seasonal allergies may also cause discomfort, so keep an eye on pollen counts and seek appropriate allergy treatments if needed.
+                    <br><br>
+                    Adjusting your diet, exercise routine, and sleep habits to match the season can also keep you feeling energized and healthy. Embrace the seasonal changes, and with the right precautions, you can enjoy each part of the year in optimal health.
+                </p>
+            </div>
+    
+            <!-- Article 5 -->
+            <div class="article-box">
+                <h3>Diabetes Management: Tips and Strategies</h3>
+                <p>
+                    Diabetes is a chronic condition that affects how your body processes blood sugar (glucose). If left unmanaged, diabetes can lead to severe complications such as heart disease, kidney failure, and nerve damage. However, with proper management, individuals with diabetes can lead full, healthy lives.
+                    <br><br>
+                    One of the most important strategies for managing diabetes is monitoring blood glucose levels regularly. This helps you understand how your body responds to food, exercise, and medications. Along with monitoring, a healthy diet rich in whole grains, vegetables, and lean proteins can help regulate blood sugar levels. It’s also important to limit the intake of refined sugars and processed foods.
+                    <br><br>
+                    Physical activity plays a crucial role in managing diabetes. Exercise helps your body use insulin more efficiently and lowers blood sugar levels. Incorporating daily movement, such as walking, cycling, or swimming, can improve overall health and blood sugar control.
+                    <br><br>
+                    Medication and insulin therapy may be necessary for some individuals with diabetes. Regular check-ups with your healthcare provider will ensure you’re on the right track and allow adjustments to your treatment plan as needed.
+                </p>
+            </div>
+    
+            <!-- Article 6 -->
+            <div class="article-box">
+                <h3>The Power of Proper Nutrition and Hydration</h3>
+                <p>
+                    Proper nutrition and hydration are essential to maintaining good health and preventing chronic illnesses. A well-balanced diet provides the necessary nutrients—vitamins, minerals, proteins, fats, and carbohydrates—that your body needs to function optimally.
+                    <br><br>
+                    Eating a variety of foods ensures that your body gets all the nutrients it needs. Include plenty of fruits, vegetables, whole grains, and lean proteins in your daily meals to boost energy levels, strengthen your immune system, and support overall health. Avoid processed foods and high sugar intake, as they can contribute to weight gain, heart disease, and diabetes.
+                    <br><br>
+                    Hydration is equally important. Water is essential for digestion, circulation, and temperature regulation. Dehydration can lead to fatigue, headaches, and reduced mental clarity. Aim to drink at least 8 cups of water daily, and increase your intake during physical activity or hot weather.
+                    <br><br>
+                    By focusing on both good nutrition and staying properly hydrated, you give your body the tools it needs to stay strong, healthy, and resilient. Healthy eating habits, when combined with regular exercise, can significantly reduce the risk of developing chronic health conditions and improve overall quality of life.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Good Samaritan Medical Centre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section id="about" class="container">
+        <h2>Who We Are</h2>
+        <p>
+            At <strong>Good Samaritan Medical Centre</strong>, we believe that healthcare should be compassionate, accessible, and rooted in excellence. 
+            Inspired by the biblical story of the Good Samaritan, our mission is to provide high-quality medical care with kindness, empathy, and professionalism.
+            We are committed to serving our community with a patient-first approach, ensuring that everyone receives the care they deserve.
+        </p>
+
+        <div class="info-box">
+            <h3>Our Mission</h3>
+            <p>To offer comprehensive, patient-centered healthcare services with integrity, compassion, and excellence, ensuring the well-being of individuals and families in our community.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Our Vision</h3>
+            <p>To be a trusted healthcare provider known for delivering high-quality medical care, embracing innovation, and promoting holistic well-being.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Our Values</h3>
+            <ul>
+                <li><strong>✔ Compassion</strong> – We treat every patient with kindness, dignity, and respect.</li>
+                <li><strong>✔ Excellence</strong> – We strive for the highest standards in medical care and service.</li>
+                <li><strong>✔ Integrity</strong> – We uphold honesty and transparency in all our interactions.</li>
+                <li><strong>✔ Community</strong> – We are dedicated to improving the health and well-being of our local community.</li>
+                <li><strong>✔ Innovation</strong> – We embrace modern medical advancements to enhance patient care.</li>
+            </ul>
+        </div>
+
+        <div class="team-section">
+            <h3>Meet Our Team</h3>
+            <p>Our team of dedicated doctors, nurses, and healthcare professionals work tirelessly to ensure that every patient receives the best medical care possible. 
+            With years of experience and a passion for healing, we are here to support you on your health journey.</p>
+        </div>
+
+        <div class="why-choose">
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li>- Experienced and caring medical professionals</li>
+                <li>- State-of-the-art diagnostic and treatment facilities</li>
+                <li>- A patient-focused approach with personalized care plans</li>
+                <li>- Commitment to preventive health and wellness education</li>
+                <li>- Affordable and accessible healthcare services</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <h3>Contact Us</h3>
+            <p>📞 <strong>Phone:</strong>+91 98765 43210 </p>
+            <p>📧 <strong>Email:</strong>goodsamaritan@gmail.com</p>
+        </div>
+
+        <p class="closing-message">
+            At <strong>Good Samaritan Medical Centre</strong>, your health is our priority. Whether you need routine check-ups, emergency care, or specialized treatment, we are here to serve you with compassion and excellence.
+        </p>
+    </section>
+
+</body>
+</html>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        $(document).ready(function(){
+            $("a.nav-link").on("click", function(event){
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    let hash = this.hash;
+                    $("html, body").animate({ scrollTop: $(hash).offset().top - 80 }, 800);
+                }
+            });
+        });
+    </script>
+
+<script src="script.js"></script>
+</script>
+
+</body>
+</html>
